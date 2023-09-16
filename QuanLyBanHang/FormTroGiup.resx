@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Giới thiệu ứng dụng
+  Chào mừng đến với ứng dụng của chúng tôi! Ứng dụng này được thiết kế để giúp bạn quản lý sản phẩm và hóa đơn một cách dễ dàng và hiệu quả.
+
+.Quản lý sản phẩm
+  Trang quản lý sản phẩm cho phép bạn thêm, sửa đổi và xóa các sản phẩm trên hệ thống của mình. Bạn có thể tìm kiếm sản phẩm bằng cách nhập từ khóa vào hộp tìm kiếm.
+
+.Quản lý hóa đơn sản phẩm
+  Trang quản lý hóa đơn sản phẩm cho phép bạn xem và quản lý tất cả các hóa đơn trong hệ thống của mình. Bạn có thể tìm kiếm hóa đơn bằng cách nhập từ khóa vào hộp tìm kiếm.
+
+Trợ giúp và hỗ trợ
+  Nếu bạn gặp bất kỳ vấn đề nào khi sử dụng ứng dụng của chúng tôi, hãy liên hệ với đội ngũ hỗ trợ của chúng tôi theo số 0352282425. Chúng tôi sẽ cố gắng hết sức để giúp bạn giải quyết vấn đề.
+
+Bắt đầu sử dụng ứng dụng
+  Để bắt đầu sử dụng ứng dụng của chúng tôi, hãy đăng nhập bằng tài khoản của bạn hoặc đăng ký để tạo một tài khoản mới. Sau đó, bạn có thể truy cập vào trang quản lý sản phẩm hoặc trang quản lý hóa đơn để bắt đầu quản lý sản phẩm và hóa đơn của mình.
+
+Cảm ơn bạn đã sử dụng ứng dụng của chúng tôi!</value>
+  </data>
 </root>

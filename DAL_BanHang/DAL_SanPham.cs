@@ -41,14 +41,14 @@ namespace DAL_BanHang
         //Sửa thông tin sản phẩm
         public bool suaSanPham(DTO_SanPham sp)
         {
-            string sql = string.Format("UPDATE SANPHAM SET TENSP = '{0}', NOISX = '{1}',GIA = '{2}',SOLUONG = '{3}' WHERE MASP='{4}'", sp.Tensp, sp.Noisx, sp.Gia,sp.Soluong,sp.MaSp);
+            string sql = string.Format("UPDATE SANPHAM SET TENSP = N'{0}', NOISX = N'{1}',GIA = '{2}',SOLUONG = '{3}' WHERE MASP='{4}'", sp.Tensp, sp.Noisx, sp.Gia,sp.Soluong,sp.MaSp);
             return updateData(sql);
         }
         //Tìm kiếm sản phẩm
-        public bool timSanPham(DTO_SanPham sp)
+        public DataTable timSanPham(string tensp)
         {
-            string sql = string.Format("select * from SANPHAM where TENSP Like N'%{0}'", sp.Tensp);
-            return updateData(sql);
+            string sql = string.Format("select * from SANPHAM where TENSP Like N'%{0}'", tensp);
+            return getTable(sql);
         }
     }
 }

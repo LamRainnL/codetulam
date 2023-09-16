@@ -30,7 +30,7 @@ namespace QuanLyBanHang
             if (txtmasp.Text != "" && txttensp.Text != "" && txtnoisx.Text != "" && txtgia.Text != "" && txtsl.Text != "")
             {
                 //tạo DTO
-                DTO_SanPham sp = new DTO_SanPham(txtmasp.Text, txttensp.Text, txtnoisx.Text, 0, 0);
+                DTO_SanPham sp = new DTO_SanPham(txtmasp.Text, txttensp.Text, txtnoisx.Text, float.Parse(txtgia.Text), int.Parse(txtsl.Text));
                 //check masp
                 if (bussp.checkMaSp(sp))
                 {
@@ -99,7 +99,8 @@ namespace QuanLyBanHang
             {
                 if (txtmasp.Text != "" && txttensp.Text != "" && txtnoisx.Text != "" && txtgia.Text != "" && txtsl.Text != "")
                 {
-                    DTO_SanPham sp = new DTO_SanPham(txtmasp.Text, txttensp.Text, txtnoisx.Text,0, 0);
+                    DTO_SanPham sp = new DTO_SanPham(txtmasp.Text, txttensp.Text, txtnoisx.Text, float.Parse(txtgia.Text), int.Parse(txtsl.Text));
+
                     if (bussp.suaSanPham(sp)) 
                     {
                         MessageBox.Show("Sửa thành công");
@@ -121,23 +122,39 @@ namespace QuanLyBanHang
                 MessageBox.Show("Chọn sản phẩm cần muốn sửa từ bảng");
             }
         }
-
-        private void txtsearch_TextChanged(object sender, EventArgs e)
-        {
-            txtsearch.Clear();
-        }
-
+        //Tìm kiếm
         private void btnsearch_Click(object sender, EventArgs e)
         {
-            DTO_SanPham sp = new DTO_SanPham(txtmasp.Text, txttensp.Text, txtnoisx.Text, 0, 0);
-            if (bussp.timSanPham(sp))
-            {
-                datathongtin.DataSource = bussp.getSanPham();
-            }
-            else
-            {
-                MessageBox.Show("Không có tên sản phẩm!");
-            }
+            datathongtin.DataSource = bussp.timSanPham(txtsearch.Text);
+        }
+        //Chuyển về trang chính
+        private void quayVềToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmmain f= new frmmain();
+            f.Show();
+            this.Hide();
+        }
+        //Xóa chữ khi nhập
+        private void txtsearch_Enter(object sender, EventArgs e)
+        {
+            txtsearch.Text = "";
+        }
+        //Chuyển đến form Hóa Đơn
+        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmhoadon f= new frmhoadon();
+            f.Show();
+            this.Hide();
+        }
+        //Làm mới lại bảng
+        private void btnlammoi_Click(object sender, EventArgs e)
+        {
+            datathongtin.DataSource = bussp.getSanPham();//làm mới datagridview
+            txtmasp.Clear();
+            txttensp.Clear();
+            txtnoisx.Clear();
+            txtgia.Clear();
+            txtsl.Clear();
         }
     }
 }
